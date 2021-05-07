@@ -20,7 +20,7 @@ Now we'll lay some hypotheses about how we might achieve that:
 ![](./Attachments/Pasted%20image%2020210506013248.png)
 - First of all, we can assume that the army's soldiers are **stored in an *array***.
 - Every element in the array will have **the info/description** of a soldier aka the soldier's **health**, **type** (a *Horse Archer*, or an *Arabian Bow*, etc...) 
-- alliance
+- **Alliance** (which tells us who is the soldier fighting for, the Muslim army or the Crusader army). And that's our target.
 
 ## Game mechanics
 Before we continue, we need to understand how the game is played to form a little sense for what will come:
@@ -148,9 +148,16 @@ For reading/writing to memory, we'll use `pymem`. We'll also use `pywin32` to ac
 
 While running the script I noticed that the *Warlords* (the human player & the opponent) could change their alliance, turns out they're also in the entities array with the type `55` or `0x37` so I made an exception for them in the script. 
 
+**Note**: Games tend to have a very large size to be loaded in memory, so they only load the important resources dynamically in memory. That means the addresses would constantly change every time you restart the game. Luckily, this isn't the case for us, because the address of the array is a 'static address'. You can say that it "doesn't change". Read about them more in the resources below.
+
 ## The results
 Before:
 ![](./Attachments/Pasted%20image%2020210507173724.png)
 
 After:
 ![](./Attachments/Pasted%20image%2020210507174020.png)
+
+## Resources
+- https://gamehacking.academy/
+- https://guidedhacking.com/threads/guide-to-learning-python-game-hacking.13506/
+- https://forum.cheatengine.org/viewforum.php?f=14
