@@ -140,13 +140,15 @@ I played with the soldier structure in memory for a while and I found that:
 Now that we can change the alliance, let's automate that!
 
 #### Automation
-I chose Python to write the hack, and I swear to god if hear one more bad comment about Python for game hacks I'll show up when you're asleep >:(
+I chose Python to write the hack, and I swear to god if I hear one more bad comment about Python for game hacks I'll show up when you're asleep >:(
 
 The script's goal is to read the memory to get the entities count, loop over the entities array, then go to the offset `0x266` to change the alliance.
 
 For reading/writing to memory, we'll use `pymem`. We'll also use `pywin32` to access Windows API to get the game's PID for it to be used by `pymem`. 
 
 While running the script I noticed that the *Warlords* (the human player & the opponent) could change their alliance, turns out they're also in the entities array with the type `55` or `0x37` so I made an exception for them in the script. 
+
+You can take a look at it [here](./script.py).
 
 **Note**: Games tend to have a very large size to be loaded in memory, so they only load the important resources dynamically in memory. That means the addresses would constantly change every time you restart the game. Luckily, this isn't the case for us, because the address of the array is a 'static address'. You can say that it "doesn't change". Read about them more in the resources below.
 
