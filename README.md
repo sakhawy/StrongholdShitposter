@@ -34,7 +34,7 @@ Before we continue, we need to understand how the game is played to form a littl
 
 
 ## Walkthrough
-#### Missing around
+#### Messing around
 The first thing I did was playing with Cheat Engine (a memory scanner) to see what I can change and what interesting addresses I can find.
 
 ![](./Attachments/Pasted%20image%2020210506014153.png)
@@ -70,7 +70,7 @@ It sets the value of `iVar3`, then subtracts it from an address:
 
 ![](./Attachments/Pasted%20image%2020210507140235.png)
 
-You'll notice that the values assigned to `iVar3` is similar to **the prices of different types of units** in the game. So it's safe to assume the if statements check the type of the soldier, `iVar3` is the soldier's price, and the address is the gold.
+You'll notice that the values assigned to `iVar3` are similar to **the prices of different types of units** in the game. So it's safe to assume the if statements check the type of the soldier, `iVar3` is the soldier's price, and the address is the gold.
 
 Before I continued diving into the function I needed to know a little bit more about its parameters.
 
